@@ -7,3 +7,116 @@ https://web.archive.org/web/20010614013848/http://porky.athensnet.com/~dustman/d
 
 David Chaum's digicash payment system which is an example of a privacy preserving ecash system
 https://web.archive.org/web/20010614013848/http://cypherspace.org/hashcash/www.digicash.com 
+Hash Cash
+A partial hash collision based postage scheme
+Hash cash is payment in burnt CPU cycles by calculating n-bit partial hash collisions on chosen texts. 
+The idea of using partial hashes is that they can be made arbitrarily expensive to compute (by choosing the desired number of bits of collision), and yet can be verified instantly. This can be used as the basis for an ecash system measured in burnt CPU cycles. Such cash systems can be used to throttle systematic abuses of un-metered internet resources. 
+Take as an example spam, where a user abuses the un-metered nature of email to send out millions of emails. The most common form of spam is commercial spam, where the user is hoping to make a profit. As the incremental costs of sending more emails to the spammer are almost zero, he can still make a profit even with a success rate of 0.0001 %. The unfortunate side-effect of this is that many people are annoyed by advertisements they are uninterested, and unlikely to be, interested in. Also on a global scale use of bandwidth and CPU resources is wasted. The spam recipients time is wasted as well, and in the case of people using commercial service providers, some recipients have metered phone calls, and some service providers charge hourly rates for connection time. 
+Hash cash coins
+Hash cash is denominated in the bit length of the partial hash collisions. One bit longer is twice as expensive to compute (on average). By choosing an appropriate denomination of hash collision we can create a system of metering which does not pose a problem to the normal sender, but which becomes expensive for large mass mailings. 
+For example, my workstation is able to test 27,000 hashes per second. A 19 bit hash collision takes on average 20 seconds to produce at this rate. If I am charged by recipients a 19 bit hash for each email I send, I can only usefully send 4320 mails per day. 
+This should be more than adequate for the normal user, but could easily ruin a spammers chances of breaking even with his low rate of success. This should cause spammers to either give up sending spam, or to work hard on increasing the accuracy of their direct marketing database, either option being is a net positive result. 
+Integration of hash cash net software
+The recipient's service provider's SMTP server could be modified to discard, or bounce messages with insufficient hash cash. Notification of the amount of hashcash required could be part of the bounce message. Alternatively the user could use the hashcash client as a filter from his .forward file. If the system administrator, or the user decides that they are still getting spam with the current postage charge, they increase the hashcash charge for receipt. 
+Hashcash suffers from a high rate of inflation: machines get faster every year. In the longer term it may be necessary to increase the hash collision postage rate by a couple of bits or so a year. 
+For mailing lists which have a need to send many emails (50 messages/ day x 1000 subscribers = 50000 emails / day) the requirement to include hash cash tokens may become expensive. To solve this problem subscribers should put the mailing list address in a postage-free recipients list. 
+Anonymity issues
+Other uses of hash cash include charging for use of anonymous remailer resources. For non-replyable remailer services a hash cash postage payment must be included for each hop of the remailer network. The remailers may wish to charge higher postage if they are the exit (last) remailer in the chain. This reflects the fact that the exit remailer may incur subsequent overheads on the senders behalf, such as receiving attempted replies by people not realizing that it was an anonymous post. Another overhead might be the remailer operators time in dealing with queries about the remailers services from users unfamiliar with remailers, and surprised to find no working reply address. 
+For longer term services such as two way nym-server accounts a larger denomination hash collision could be used as a subscription for a given period to reflect the resources consumed by the remailer. 
+Traditional payment systems which are traceable are not appropriate where privacy must be maintained at the same time as enabling providing protection from systematic abuse of un-metered resources. David Chaum's digicash payment system which is an example of a privacy preserving ecash system. I am very keen on seeing digicash succeed as the main net payment system because of it's privacy preserving features. 
+Migration path to digicash
+Digicash support can be combined with the hashcash client, thus providing a smooth migration path to postage denominated in digicash. The client could be set up so that either form of payment form would be accepted. Advantages of this dual currency approach are: 
+Hashcash may provide a stop gap measure until digicash becomes more widely accepted and used
+Hashcash is free, all you've got to do is burn some cycles on your PC. It is in keeping with net culture of free discourse, where the financially challenged can duke it out with millionaires, retired government officials, etc. on equal terms. For this reason it would be desirable to retain hashcash as an alternative even if digicash becomes pervasive.
+Hashcash may provide us with a fall back method for controlling access to un-metered resources while preserving anonymity if digicash turns sour (gets outlawed or required to escrow user identities).
+The advantages of digicash, is that it actually compensates the recipient for resources used. For example the operator of a popular remailer can use the revenue generated to upgrade equipment to cope with the overhead. Popular individuals (media-celebrities), or individuals whose time is valuable to themselves can set the postage higher to discourage emails of a trivial nature, or in the extreme case (media celebrities) hire a secretary with the revenues generated to deal with the email, and filter by given criteria. 
+Other related ecash systems
+Another payment systems based on partial hash collisions is Ron Rivest and Adi Shamir's MicroMint payment system. Their paper discusses using k-way hash collisions to offer a redeemable micro payment system for accessing web pages. A key feature of the MicroMint system is that it involves a centralized mint which must purchase special purpose hardware, to overcome a threshold in the generation of k-way hash functions. The choice of a high threshold makes it uneconomical to produce a competing mint to steal the redemption values. 
+Implementation
+A first cut implementation of these ideas can be fetched from here: 
+hashcash.tgz
+PGP signature of hashcash.tgz
+I will describe what the implementation allows by example, using the program so you can follow along if you wish. 
+There is an integrated partial hash collision generator (hashcash mint) and remailer plug-in. The remailer plug-in should be easy to hook into type I remailers. type-II or nym-server would require modifying the mixmaster client / remailer, the code has been designed to make this relatively easy to do, and link directly into mixmaster, or alpha or new-nym. 
+Compiling
+        % gcc -O6 -c *.c
+        % gcc -o hashcash hashcash.o sha1.o endian.o timer.o
+        % gcc -o sha1 sha1file.o sha1.o endian.o
+        % gcc -o sha1test sha1test.o sha1.o endian.o timer.o
+        %
+The functions provided by the program are
+Run with no arguments and it prints a list of flags and terse usage instructions. 
+Speed test:
+        % hashcash -t
+        speed: 7218 hashes per sec
+        %
+This tells you the number of hashes it can search per second. Version 0.3 added a fast SHA1, and other speed enhancements, so the client is now 4 x faster. The speed is not actually important as such, but it is good to have a fast implementation, because spammers will have incentives to heavily optimize the code. By starting with a well optimized client there is little room for additional speedups to be found by spammers. 
+Estimate time required to find 17-bit partial hash collision:
+        % hashcash -t -17
+        speed: 7274 hashes per sec
+        find: 17 bit partial sha1 collision
+        estimate: 9 seconds
+        %
+(varies quite widely from estimated time) 
+Calculate a 17 bit collision on string "flame"
+(flame is a now dead remailer): 
+        % hashcash -17 flame
+        speed: 7274 hashes per sec
+        find: 17 bit partial sha1 collision
+        collision: 09948flame356018443
+        tries: 57450
+        %
+The collision is actually found on the hash of the date since Jan 1 1970 in days (5 digit, leading zero filled) and string given. 
+So the collision is found on: 
+        % echo -n 09948flame | sha1
+        fbbea210abafe3e72afe7849eaea2052e309e017
+        %
+The collision that was found can be seen manually as the collision is constrained to be the MSbits of the digest: 
+        % echo -n 09948flame356018443 | sha1
+        fbbead76da651cf856f7466fed9624d3ada061d9
+        %
+You can manually see that the first 20 bits match. (Note we asked for a 17 bit hash, but it generates a 17 bit or larger hash. We just got lucky and got an extra 3 bits, which would happen about 1 time in 8). 
+The hashcash client can also report on a collision:
+        % hashcash flame 09948flame356018443
+        collision: 20 bits
+        %
+You can check on the validity period as compared to today's date:
+        % hashcash flame 09948flame356018443 28
+        validity: 28 days remaining
+        collision: 20 bits
+        %
+You can check that a hash has a requested number of bits:
+        % hashcash -25 flame 09948flame356018443 
+        collision: 20 bits
+        required: 25 bits
+        rejected: too few bits
+        %
+The exit status is set to failure if any of the tests fail: i.e. if there are too few bits, or if you do a validity check and the hash has expired, or isn't yet in it's validity period. 
+Double spending protection
+You can also ask the hashcash client to remember collisions within a selected validity period. 
+        % hashcash -d -25 flame 09948flame356018443 28
+        validity: 28 days remaining
+        collision: 20 bits
+        required: 20 bits
+        database: not double spent
+        adding: 28 09948flame356018443
+        %
+The collision will only be added if all the tests pass (in validity period, or required number of bits). The exit status also tells you if the hash was ok.
+The database would grow indefinitely as the mailer accepted new payments, so the validity period is stored in the database, and at the next use of the database after the validity period expires, the collision will be discarded. There is no need to keep expired collisions around because we wouldn't accept it anyway because it's out of date, so who cares if we've previously accepted it. A validity period of 0 means valid forever, and will never be discarded from the database. 
+An example of double spending
+A new test now that we have a value in the double spend database is whether a hash has been presented before, so we reissue the above command and expect the hash collision to be rejected as already spent, because it is in the database: 
+        % hashcash -d -25 flame 09948flame356018443 28
+        validity: 28 days remaining
+        collision: 20 bits
+        required: 25 bits
+        rejected: too few bits
+        database: double spent
+        %
+(exit status is set to failure, due to double spent cash) 
+That's it
+It's very lightly tested, so if anything breaks let me know. 
+The hash search is reasonably fast (bar assembly language speedups). 
+It's got some inefficiencies in the double spending protection database implementation, but working code comes first, efficiency later. 
+Adam 
+
+Comments, html bugs to me (Adam Back) at <adam@cypherspace.org> 
