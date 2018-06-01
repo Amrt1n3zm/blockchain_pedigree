@@ -1,0 +1,25 @@
+References
+[BC+ 88]
+B. O. Brachtl, D. Coppersmith, M. M. Hyden, S. M. Matyas, Jr., C. H. W. Meyer, J. Oseas, Sh. Pilpel, and M. Shilling. Data authentication using modification detection codes based on a public one way encryption function. U.S. Patent No. 4,908,861, issued March 13, 1990.
+Google Scholar http://scholar.google.com/scholar_lookup?title=Data%20authentication%20using%20modification%20detection%20codes%20based%20on%20a%20public%20one%20way%20encryption%20function&author=BO.%20Brachtl&author=D.%20Coppersmith&author=MM.%20Hyden&author=SM.%20Matyas&author=CHW.%20Meyer&author=J.%20Oseas&author=S.%20Pilpel&author=M.%20Shilling&publication_year=1990
+
+
+[BC+ 88]a
+(Cf. C. H. Meyer and M. Shilling, Secure program load with modification detection code. In Securicom 88: 6ème Congrès mondial de la protection et de la sécurité informatique et des communications, pp. 111–130 (Paris, 1988).)
+Google Scholar http://scholar.google.com/scholar_lookup?title=Secure%20program%20load%20with%20modification%20detection%20code&author=CH.%20Meyer&author=M.%20Shilling&pages=111-130&publication_year=1988
+
+[Dam 87]
+I. Damgård. Collision-free hash functions and public-key signature schemes. In Advances in Cryptology—Eurocrypt ’87, Lecture Notes in Computer Science, Vol. 304, pp. 203–217, Springer-Verlag (Berlin, 1988).
+Google Scholar http://scholar.google.com/scholar_lookup?title=Collision-free%20hash%20functions%20and%20public-key%20signature%20schemes&author=I.%20Damg%C3%A5rd&pages=203-217&publication_year=1988 
+
+[HaSt 91]
+S. Haber, W. S. Stornetta, How to time-stamp a digital document, Journal of Cryptography, Vol. 3, No. 2, pp. 99–111 (1991). (Presented at Crypto ’90.)
+Google Scholar http://scholar.google.com/scholar_lookup?title=How%20to%20time-stamp%20a%20digital%20document&author=S.%20Haber&author=WS.%20Stornetta&journal=Journal%20of%20Cryptography&volume=3&issue=2&pages=99-111&publication_year=1991 
+
+[Merk 80]
+R. C. Merkle, Protocols for public key cryptosystems. In Proc. 1980 Symp. on Security and Privacy, IEEE Computer Society, pp. 122–133 (Apr. 1980).
+Google Scholar http://scholar.google.com/scholar_lookup?title=Protocols%20for%20public%20key%20cryptosystems&author=RC.%20Merkle&pages=122-133&publication_year=1980 
+
+[Riv 90]
+R. L. Rivest. The MD4 message digest algorithm. In Advances in Cryptology—Crypto ’90, Lecture Notes in Computer Science, Vol. 537 (ed. A. J. Menezes, S. A. Vanstone), pp. 303–311, Springer-Verlag (Berlin, 1991).
+Google Scholar http://scholar.google.com/scholar_lookup?title=The%20MD4%20message%20digest%20algorithm&author=RL.%20Rivest&pages=303-311&publication_year=1991 
