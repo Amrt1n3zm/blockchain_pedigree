@@ -1,5 +1,7 @@
 # blockchain_pedigree
-las raices del bitcoin son profundas ,ya que reposa en hombros de gigantes
+las raices del bitcoin son profundas ,ya que reposa en hombros de gigantes.
+
+
 Bibliografia :
 
 Arvind Narayanan is an assistant professor of computer science at Princeton. He leads the Princeton Web Transparency and Accountability Project to uncover how companies collect and use our personal information. Narayanan also leads a research team investigating the security, anonymity, and stability of cryptocurrencies, as well as novel applications of blockchains. He co-created a massive open online course, and a textbook on bitcoin and cryptocurrency technologies. His doctoral research showed the fundamental limits of de-identification, for which he received the Privacy Enhancing Technologies Award. Narayanan is an affiliated faculty member at the Center for Information Technology Policy at Princeton and an affiliate scholar at Stanford Law School's Center for Internet and Society. You can follow him on Twitter at @random_walker. https://queue.acm.org/detail.cfm?id=3136559 
