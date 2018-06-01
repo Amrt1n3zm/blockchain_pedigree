@@ -1,0 +1,40 @@
+
+
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.38.9199
+
+
+Abstract
+) Josh Benaloh Clarkson University Michael de Mare Clarkson University April 21, 1992 Efficient Broadcast Time-Stamping (Extended Abstract) Abstract Even using an authenticated synchronous broadcast model, the task of unforgeably time-stamping digital documents still presents some problems. It is simply not practical to assume that all participants will record and store everyone else's documents so that creation times can be verified. This paper presents a time and space efficient method for accumulation of time-stamped documents. Whenever a question arises, a claimant can convince any "honest" participant of the time that its document was posted. 1 Introduction The problem of unforgeably time-stamping documents has long been believed to be "open and shut". Given any unpredictable stream of data (e.g. sun-spot activity), one can digitally sign a document together with a sufficiently long portion of the stream at the time of signing. If the document is later revealed, it...
+
+Keyphrases
+efficient broadcast time-stamping    space efficient method    extended abstract    long portion    unforgeably time-stamping digital document    synchronous broadcast model    creation time    time-stamping document    time-stamped document    unpredictable stream    honest participant    sun-spot activity    
+
+
+Active Bibliography
+1089 
+Unreliable Failure Detectors for Reliable Distributed Systems – Tushar Deepak Chandra, Sam Toueg - 1996 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=88660 
+981 
+Applied Cryptography -- Protocols, Algorithms, and Source Code in C – Bruce Schneier 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=30381
+153 
+One-way accumulators: A decentralized alternative to digital signatures – Josh Benaloh, Michael De Mare - 1993 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=129136
+521 
+Consensus in the presence of partial synchrony – Cynthia Dwork, Nancy Lynch, Larry Stockmeyer - 1988 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=44949
+764 
+Multiparty Communication Complexity – Danny Dolev, Tomás Feder - 1989 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=41156
+81 
+Fast Asynchronous Byzantine Agreement with Optimal Resilience – Ran Canetti, Tal Rabin - 1998 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=271984
+16 
+Games Computers Play: Game-Theoretic Aspects of Computing – Nathan Linial - 1992 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=567429
+
+Studies on verifiable secret . . . Multiparty Computation – Arpita Patra - 2010 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=43587015
+
+Efficient Broadcast Time-Stamping (Extended Abstract) – Josh Benaloh, Michael de Mare - 1992 
+http://citeseerx.ist.psu.edu/viewdoc/summary?cid=67762771
