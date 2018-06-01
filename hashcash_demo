@@ -119,4 +119,4 @@ The hash search is reasonably fast (bar assembly language speedups).
 It's got some inefficiencies in the double spending protection database implementation, but working code comes first, efficiency later. 
 Adam 
 
-Comments, html bugs to me (Adam Back) at <adam@cypherspace.org> 
+Comments, html bugs to me (Adam Back) at <adam@cypherspace.org>  
