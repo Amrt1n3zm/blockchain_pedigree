@@ -1,5 +1,5 @@
 # blockchain_pedigree
-las raices del block chain son profundas ya que reposa en hombros de gigantes
+las raices del block chain (blockChain) son profundas ya que reposa en hombros de gigantes
 
 
 Pedigrí académico de las criptomonedas.
