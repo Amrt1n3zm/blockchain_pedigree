@@ -1,12 +1,14 @@
 # blockchain_pedigree
-las raices del bitcoin son profundas ya que reposa en hombros de gigantes
+las raices del block chain son profundas ya que reposa en hombros de gigantes
 
 
-Pedigrí académico de Bitcoin
+Pedigrí académico de las criptomonedas.
+
 El concepto de criptomonedas se basa en ideas olvidadas en la literatura de investigación.
+
 Arvind Narayanan y Jeremy Clark
 
-Tradución Alex Martin como ejercicio del curso http://bitcoinbook.cs.princeton.edu/  
+Traducción de Alex Martin como ejercicio del curso http://bitcoinbook.cs.princeton.edu/  
 
 Si ha leído acerca de bitcoin en la prensa y está familiarizado con la investigación académica en el campo de la criptografía, 
 es probable que tenga la siguiente impresión: varias décadas de investigación en efectivo digital, comenzando con David Chaum, 
